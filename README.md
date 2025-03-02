@@ -30,7 +30,7 @@ This expansive dataset has great potential for an in-depth exploration into vari
 
 ## How to use the dataset
 
-Introduction:
+### Introduction:
 
 Understanding the Columns:
 
@@ -61,25 +61,25 @@ babies = Number infants
 
 ### **Booking Details:**
 
--meal: Type(s) food option(s) included in booking package (Categorical)  
--country & market_segment & distribution_channel columns provide demographic and customer classification information.  
--is_repeated_guest column specifies whether a guest is a repeated visitor or not.  
--previous_cancellations column indicates how many previous bookings were canceled by a guest.  
--previous_bookings_not_canceled shows how many previous bookings were not canceled by a guest.  
+**-meal:** Type(s) food option(s) included in booking package (Categorical)  
+**-country & market_segment & distribution_channel** columns provide demographic and customer classification information.  
+**-is_repeated_guest** column specifies whether a guest is a repeated visitor or not.  
+**-previous_cancellations** column indicates how many previous bookings were canceled by a guest.  
+**-previous_bookings_not_canceled** shows how many previous bookings were not canceled by a guest.  
 
 ### **Accommodation Details:**
 
--reserved_room_type column indicates which type room was originally reserved for each booking.  
--assigned_room_type mentions which type room was finally assigned for each booking.  
--booking_changes: Number of changes made to the booking before arrival.  
--deposit_type: Type of deposit made for the booking (Categorical).  
--agent & company columns provide relevant information about the travel agency and/or company involved in making the reservation.  
+**-reserved_room_type** column indicates which type room was originally reserved for each booking.  
+**-assigned_room_type** mentions which type room was finally assigned for each booking.  
+**-booking_changes** Number of changes made to the booking before arrival.  
+**-deposit_type** Type of deposit made for the booking (Categorical).  
+**-agent & company** columns provide relevant information about the travel agency and/or company involved in making the reservation.  
 
 ### **Additional Information:**
 
--days_in_waiting_list: Number of days the booking was on a waiting list before it was confirmed or canceled.  
--customer_type provides information on types of customers (Categorical)  
--adr: Average daily rate per room, calculated by dividing the sum of all lodging transactions by the total number of staying nights (Numeric)
+**-days_in_waiting_list:** Number of days the booking was on a waiting list before it was confirmed or canceled.  
+**-customer_type** provides information on types of customers (Categorical)  
+**-adr:** Average daily rate per room, calculated by dividing the sum of all lodging transactions by the total number of staying nights (Numeric)
 
 
 ## Research Ideas  
@@ -105,14 +105,17 @@ File: hotel_bookings.csv
 | Column name | Description |  
 |:--------------------- |:--------------------|
 | hotel	| Indicates the type of hotel (resort or city). (Categorical)|  
-is_canceled	| Specifies whether the booking was canceled or not (0=not canceled, 1=canceled). (Binary)
+is_canceled	| Specifies whether the booking was canceled or not (0=not canceled, 1=canceled). (Binary)  
+|booking_date (*new*)| indicate de date of the reservation|
 |lead_time	|Represents the number of days between the booking date and the arrival date. (Numerical)
 |arrival_date_year|	Denotes the year of the |arrival date. (Categorical)
 |arrival_date_month	|Indicates the month of the arrival date. (Categorical)
 |arrival_date_week_number|	Specifies the week number in which guests arrived at the hotel. (Numerical)
 |arrival_date_day_of_month|	Represents a specific day of arrival within a month. (Numerical)
-|stays_in_weekend_nights|	Indicates how many nights (Saturday or Sunday) guests stayed or booked to stay at a hotel during weekends. (Numerical)
-|stays_in_week_nights|	Represents how many weeknights (Monday to Friday) guests stayed or booked to stay at a hotel during weekdays. (Numerical)
+|full_arrival_date (*new*)| indicates the full date|
+|stays_in_weekend_nights|	Indicates how many nights (Saturday or Sunday) guests stayed or booked to stay at a hotel during weekends. (Numerical)|
+|stays_in_week_nights|	Represents how many weeknights (Monday to Friday) guests stayed or booked to stay at a hotel during weekdays. (Numerical)|
+|total_stays_in_nights (*new*)|	Represents how many nights in total guests stayed or booked to stay at a hotel . (Numerical)
 |adults|	Indicates the number of adults included in each booking. (Numerical)
 |children|	Indicates the number of children included in each booking. (Numerical)
 |babies|	Indicates the number of babies included in each booking. (Numerical)
@@ -137,3 +140,16 @@ company|	Represents the ID of the company that made the booking. (Categorical)
 |reservation_status|	Indicates the status of the reservation (e.g., canceled, checked-in, no-show). (Categorical)
 |reservation_status_date|	Represents the date on which the reservation status was last updated. (Date)  
 
+
+
+## Data Cleaning
+
+**Modifications:**
+
+arrival_date_month changed from text to numerical value  
+addition column full_arrival_date  
+addition column booking_date
+addition column total_stays_in_nights
+removal of decimal in values for the columns agent and company  
+format change to ##,#0 for the values in column adr
+removal of all entries (716) with 0 nights stay and 0 adr  
