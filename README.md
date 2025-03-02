@@ -8,9 +8,13 @@ By Mesum Raza Hemani [source]
 ```bash 
 |___Data
 |    |___hotel_bookings.csv #original data  
+|    |___hotel_bookings_processed_data #cleaned data
 |
 |___Excels
-|    |___hotel_bookings raw data #excel file
+|    |___hotel_bookings_raw_data #data cleaning
+|    |___hotel_bookings_analysis #clean data
+|____README
+
 ```
 
 
@@ -146,10 +150,15 @@ company|	Represents the ID of the company that made the booking. (Categorical)
 
 **Modifications:**
 
-arrival_date_month changed from text to numerical value  
-addition column full_arrival_date  
-addition column booking_date
-addition column total_stays_in_nights
-removal of decimal in values for the columns agent and company  
-format change to ##,#0 for the values in column adr
-removal of all entries (716) with 0 nights stay and 0 adr  
+* arrival_date_month changed from text to numerical value  
+* addition column full_arrival_date  
+* addition column booking_date
+* addition column total_stays_in_nights
+* removal of decimal in values for the columns agent and company  
+* format change to ##,#0 for the values in column adr
+* removal of all entries (716) with 0 nights stay and 0 adr  
+* removal of all entries (111) with 0 adults and 0 child
+* removal of outlayers from adr column
+
+creation of new CSV hotel_bookings_processed_data
+creation of file Hotel_bookings_analysis
