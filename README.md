@@ -160,6 +160,7 @@ company|	Represents the ID of the company that made the booking. (Categorical)
 * removal of all entries (111) with 0 adults and 0 child
 * removal of outlayers from adr column
 * add value 0 in column children where the value was left blank
+* add value 'Unknown' when value was missing from column country
 
 creation of new CSV hotel_bookings_processed_data
 creation of file Hotel_bookings_analysis
@@ -167,4 +168,5 @@ creation of file Hotel_bookings_analysis
 
 ## Analysis
 
-* creation of tab for numerical attributes analysis
+* creation of tabs for numerical, category, date attributes analysis
+
