@@ -4,6 +4,7 @@ Hotel Bookings Analysis
 Analyzing Hotel Bookings and Cancellations  
 By Mesum Raza Hemani [source]
 
+
 **Repository Structure**  
 ```bash 
 |___Data
@@ -32,11 +33,13 @@ The provided data can facilitate analysis on several levels: studying specific h
 
 This expansive dataset has great potential for an in-depth exploration into various aspects involved in hotel bookings processes while providing valuable insights for improving hotel services, optimizing operations, and understanding customer preferences
 
+
 ## How to use the dataset
 
 ### Introduction:
 
 Understanding the Columns:
+
 
 **hotel:** Type of hotel (Categorical)
 
@@ -158,9 +161,16 @@ company|	Represents the ID of the company that made the booking. (Categorical)
 * format change to ##,#0 for the values in column adr
 * removal of all entries (716) with 0 nights stay and 0 adr  
 * removal of all entries (111) with 0 adults and 0 child
+* removal of outlayers with adult >= 6 (15 entries)
+* column children, empty values have been replaced by 0 (4 entries)
+* column babies, outlayers with values=>9 changed to 0 (2 entries)
+* removal of outlayers with children = 10 (1 entry)
 * removal of outlayers from adr column
+* new column total_stay_revenue based on adr and total_stays_in_nights
 * add value 0 in column children where the value was left blank
 * add value 'Unknown' when value was missing from column country
+* values "country" have been converted from format ISO3 to full english name
+* removal of value "undefined" as market segment (2 entries)
 
 creation of new CSV hotel_bookings_processed_data
 creation of file Hotel_bookings_analysis
