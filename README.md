@@ -14,6 +14,9 @@ By Mesum Raza Hemani [source]
 |___Excels
 |    |___hotel_bookings_raw_data #data cleaning
 |    |___hotel_bookings_analysis #clean data
+|    |___Hotel_bookinks_dashboard_draft #1st draft
+|    |___Hotel_bookinks_dashboard #final version
+|
 |____README
 
 ```
