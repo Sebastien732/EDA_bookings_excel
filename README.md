@@ -14,7 +14,7 @@ By Mesum Raza Hemani [source]
 |___Excels
 |    |___hotel_bookings_raw_data #data cleaning
 |    |___hotel_bookings_analysis #clean data
-|    |___Hotel_bookinks_dashboard_draft #1st draft
+|    |___Hotel_bookinks_dashboard_draft #1st draft(can be ignored) 
 |    |___Hotel_bookinks_dashboard #final version
 |
 |____README
@@ -175,11 +175,103 @@ company|	Represents the ID of the company that made the booking. (Categorical)
 * values "country" have been converted from format ISO3 to full english name
 * removal of value "undefined" as market segment (2 entries)
 
-creation of new CSV hotel_bookings_processed_data
-creation of file Hotel_bookings_analysis
+Creation of new CSV hotel_bookings_processed_data  
+Creation of file Hotel_bookings_analysis
+
 
 
 ## Analysis
 
-* creation of tabs for numerical, category, date attributes analysis
+This exploratory data analysis (EDA) consists of multiple tabs designed to examine different aspects of hotel booking data:
+
+- **Numerical, Categorical, and Date Attributes Analysis:** Provides an overview of key variables.
+- **Dual Value Analysis:** Compares two related variables.
+- **Correlation Table:** Displays relationships between different attributes.
+- **Hotel_bookings_analysis File:** Generated based on the updated CSV file, `hotel_bookings_processed_data`.
+
+### Specialized Tabs:
+- **Cancellation Table:** Focuses on parameters influencing cancellations.
+- **Customer Profile:** Identifies different customer types.
+- **Waiting List:** Analyzes peak periods for waiting list usage and its impact on cancellations.
+- **ADR (Average Daily Rate) Analysis:** Examines ADR trends by segment, time period, and country.
+- **Total Stay Revenue:** Highlights revenue sources, customer profiles, and variations over time.
+- **KPIs:** Contains a pivot table summarizing key performance indicators displayed in the dashboard.
+
+## Data Set Summary
+
+The dataset consists of reservations from two hotels, covering stays from **July 2015 to August 2017**.
+
+## Dashboard Overview
+
+The dashboard is structured into different sections:
+
+### Key Performance Indicators (KPIs) at the Top:
+- **Total Bookings:** Total number of reservations made.
+- **Cancellation Rate:** Percentage of bookings that were canceled.
+- **Average Daily Revenue (ADR):** Average room rate per booking.
+- **Average Number of Nights:** Mean number of nights booked per stay.
+- **Revenue:** Total earnings from confirmed bookings, excluding cancellations.
+
+The first row displays overall KPIs, while the second row reflects the KPIs based on applied filters.
+
+### Filters (Left Panel):
+Users can filter data by:
+- **Hotel**
+- **Year**
+- **Booking Status**
+- **Market Segment**
+
+### Revenue and Sales Insights (Right Panel):
+Three bar charts present top performers:
+- **Top 5 Countries of Booking Origin**
+- **Top 5 Agents (by internal ID)**
+- **Top 5 Companies (by internal ID)**
+
+### Central Charts:
+1. **Market Segment Booking:** Shows the number of bookings per segment and corresponding cancellations.
+2. **Booking Lead Time in Days:** Displays confirmed vs. canceled reservations based on lead time before arrival.
+3. **Repeated Guests:** Highlights the proportion of returning customers.
+4. **Market Segment ADR:** Examines the average price per segment.
+5. **Arrivals per Month:** Tracks booking trends for each arrival period.
+6. **ADR per Month:** Displays the average room price by month.
+7. **Revenue per Month:** Shows actual revenue per month, excluding canceled bookings.
+
+# Observations
+
+Key findings from the dashboard analysis:
+- **Market Segment Trends:** Online Travel Agencies (OTAs) contribute the highest revenue and ADR, making up over 50% of total earnings.
+- **Cancellation Insights:** "Groups" segment has the highest cancellation rate, but bookings from this segment have declined over time—an.
+- **Lead Time Impact:** Bookings with longer lead times are more likely to be canceled.
+- **Seasonality & Occupancy:** 
+  - High season spans **March to November**, with peaks in **May and October**.
+  - **July and August** have the highest ADR and revenue but are not the busiest months in terms of volume.
+  - Booking volume and revenue show an upward trend year-over-year.
+- **Repeated Guests:** Most frequent return customers belong to **Aviation, Corporate, and Complimentary** segments.
+- **Hotel Comparison:** 
+  - The **City Hotel** has higher booking volume and ADR but also the highest cancellation rate.
+  - The **Resort Hotel** sees longer stays and significant ADR fluctuations throughout the year.
+- **Miscellaneous Insights (Not Included in Dashboard):** 
+  - Guests with **special requests, parking reservations, or multiple booking modifications** are less likely to cancel.
+
+# Conclusions
+
+To optimize revenue and occupancy rates:
+- Adjust **ADR during peak periods** for maximum profitability.
+- Implement **discounted ADR strategies for groups** during low season to drive bookings.
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
